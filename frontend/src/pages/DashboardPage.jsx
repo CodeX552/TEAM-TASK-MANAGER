@@ -32,6 +32,13 @@ const PlaceholderDonut = ({ percent = 68 }) => {
   );
 };
 
+const teamMembers = [
+  { name: "Ava Johnson", role: "Project Manager", tasks: 8, status: "Active", accent: "#06b6d4" },
+  { name: "Noah Patel", role: "Frontend Developer", tasks: 6, status: "Working", accent: "#8b5cf6" },
+  { name: "Mia Chen", role: "QA Engineer", tasks: 4, status: "Reviewing", accent: "#f59e0b" },
+  { name: "Liam Garcia", role: "Backend Developer", tasks: 5, status: "Online", accent: "#22c55e" },
+];
+
 const DashboardPage = () => {
   const [stats, setStats] = useState({ total: 0, completed: 0, pending: 0, overdue: 0 });
   const [loading, setLoading] = useState(true);
@@ -127,11 +134,24 @@ const DashboardPage = () => {
                   </div>
                 </div>
                 <div style={{width:220}} className="card">
-                  <div style={{fontWeight:700}}>Team Snapshot</div>
-                  <div style={{marginTop:8,display:'flex',flexDirection:'column',gap:8}}>
-                    <div style={{display:'flex',justifyContent:'space-between'}}><div className="metric-label">Active</div><div>12</div></div>
-                    <div style={{display:'flex',justifyContent:'space-between'}}><div className="metric-label">Overdue</div><div style={{color:'#ef4444'}}>3</div></div>
-                    <div style={{display:'flex',justifyContent:'space-between'}}><div className="metric-label">Open PRs</div><div>7</div></div>
+                  <div style={{fontWeight:700}}>Team Members</div>
+                  <div className="member-list">
+                    {teamMembers.map((member) => (
+                      <div className="member-item" key={member.name}>
+                        <div className="avatar" style={{ background: member.accent }}>
+                          {member.name
+                            .split(" ")
+                            .map((part) => part[0])
+                            .join("")}
+                        </div>
+                        <div className="member-meta">
+                          <div className="member-name">{member.name}</div>
+                          <div className="member-role">{member.role}</div>
+                        </div>
+                        <div className="member-badge">{member.tasks} tasks</div>
+                        <div className="member-status">{member.status}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
