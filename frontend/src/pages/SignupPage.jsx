@@ -36,10 +36,10 @@ const SignupPage = () => {
           </div>
           {error && <p className="mb-4 rounded-2xl border border-rose-400/20 bg-rose-500/10 px-4 py-3 text-sm text-rose-200">{error}</p>}
           <div className="space-y-4">
-            <input className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/20" placeholder="Name" onChange={(e) => setForm({ ...form, name: e.target.value })} />
-            <input className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/20" placeholder="Email" onChange={(e) => setForm({ ...form, email: e.target.value })} />
-            <input type="password" className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/20" placeholder="Password" onChange={(e) => setForm({ ...form, password: e.target.value })} />
-            <select className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/20" onChange={(e) => setForm({ ...form, role: e.target.value })}>
+            <input className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/20" placeholder="Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+            <input className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/20" placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+            <input type="password" className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/20" placeholder="Password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} />
+            <select className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/20" value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })}>
               <option value="member">Member</option>
               <option value="admin">Admin</option>
             </select>
