@@ -28,8 +28,8 @@ const LoginPage = () => {
   return (
     <div className="min-h-[calc(100vh-72px)] px-4 py-10 flex items-center justify-center">
       <div className="grid w-full max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <section className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/15 via-transparent to-violet-500/10" />
+        <section className="relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+          <div className="absolute inset-0 bg-linear-to-br from-cyan-400/15 via-transparent to-violet-500/10" />
           <div className="relative space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-400/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-cyan-100">
               Live operations hub
@@ -56,7 +56,7 @@ const LoginPage = () => {
           </div>
         </section>
 
-        <form onSubmit={onSubmit} className="rounded-[32px] border border-white/10 bg-slate-950/65 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.32)] backdrop-blur-2xl md:p-8">
+        <form onSubmit={onSubmit} className="rounded-4xl border border-white/10 bg-slate-950/65 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.32)] backdrop-blur-2xl md:p-8">
           <div className="mb-6 space-y-2">
             <p className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">Secure sign in</p>
             <h2 className="text-3xl font-semibold text-white">Welcome back</h2>
@@ -66,12 +66,19 @@ const LoginPage = () => {
           <div className="space-y-4">
             <input className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/20" placeholder="Email" onChange={(e) => setForm({ ...form, email: e.target.value })} />
             <input type="password" className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/20" placeholder="Password" onChange={(e) => setForm({ ...form, password: e.target.value })} />
-            <button disabled={loading} className="group w-full rounded-2xl bg-gradient-to-r from-cyan-400 via-violet-500 to-emerald-400 px-4 py-3 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 disabled:opacity-70">
+            <button disabled={loading} className="group w-full rounded-2xl bg-linear-to-r from-cyan-400 via-violet-500 to-emerald-400 px-4 py-3 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 disabled:opacity-70">
               <span className="inline-flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-slate-950/70 group-hover:animate-pulse" />
                 {loading ? "Logging in..." : "Enter dashboard"}
               </span>
             </button>
+          </div>
+          <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-cyan-400/10 px-4 py-3 text-sm text-cyan-50">
+            <p className="font-semibold text-cyan-100">Demo login hints</p>
+            <div className="mt-2 space-y-1 text-cyan-50/90">
+              <p><span className="font-medium text-cyan-100">Admin:</span> admin@demo.com / Admin@123</p>
+              <p><span className="font-medium text-cyan-100">Member:</span> member@demo.com / Member@123</p>
+            </div>
           </div>
           <p className="mt-5 text-sm text-slate-400">
             No account? <Link to="/signup" className="font-medium text-cyan-200 hover:text-white">Create one</Link>
