@@ -5,8 +5,6 @@ A full-stack role-based task management application for teams, built with React,
 ## Live Deployment
 
 - Frontend: https://frontend-production-245c.up.railway.app
-- Backend API: https://backend-production-4a47.up.railway.app
-- API Health: https://backend-production-4a47.up.railway.app/api/health
 
 ## Project Overview
 
