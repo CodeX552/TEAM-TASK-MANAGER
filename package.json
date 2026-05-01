@@ -9,6 +9,7 @@
     "seed": "npm --prefix backend run seed",
     "build:frontend": "npm --prefix frontend run build"
   },
+  "postinstall": "npm --prefix frontend ci && npm --prefix frontend run build",
   "keywords": [],
   "author": "",
   "license": "ISC",
